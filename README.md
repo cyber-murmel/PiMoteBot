@@ -60,6 +60,11 @@ network={
     psk="YourPassPhrase"
 }
 $ sudo ifdown wlan0; sudo ifup wlan0
+$ ip a
 $ ping 8.8.8.8 -c 10
 ```
-The ping at the end will only work, if your network has a gateway to the internet and a dhcp server (which is likely).
+The ping at the end will only work, if your network has a gateway to the internet and a dhcp server (which is likely). The `ip a` should give you your IP.</br>
+Now it's time to update the system.
+```
+$ sudo apt-get update; sudo apt-get upgrade
+```
