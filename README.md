@@ -67,4 +67,5 @@ The ping at the end will only work, if your network has a gateway to the interne
 Now it's time to update the system.
 ```
 $ sudo apt-get update; sudo apt-get upgrade
+$ sudo poweroff
 ```
