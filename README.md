@@ -23,4 +23,14 @@ sdc                 8:32   1   3.7G  0 disk
 sr0                11:0    1  1024M  0 rom 
 $ dd if=raspbian.zip | p -b | sudo dd of=/dev/sdc bs=128M ; sync
 ```
+This is the SD card ready. Plug it in, but don't power up yet. For the first time setup you can either connect a display and keyboard, wire connected to the local network, try to get the Ip and connect via SSH or connect to it via UART/Serial.
 
+## UART
+
+If you live in Germany like me, you can buy [this USB UART adapter](www.amazon.de/dp/B008AGDTA4/).
+| wire        | GPIO        |
+| ----------- | ----------- |
+| black (GND) | pin 6 (GND) |
+| green (RX)  | pin 8 (TX)  |
+| white (TX)  | pin 10 (RX) |
+| red (+5V)   | (leave out) |
