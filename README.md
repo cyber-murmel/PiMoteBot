@@ -28,6 +28,7 @@ This is the SD card ready. Plug it in, but don't power up yet. For the first tim
 ## UART
 
 If you live in Germany like me, you can buy [this USB UART adapter](www.amazon.de/dp/B008AGDTA4/).
+
 | wire        | GPIO        |
 | ----------- | ----------- |
 | black (GND) | pin 6 (GND) |
