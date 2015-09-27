@@ -35,3 +35,10 @@ If you live in Germany like me, you can buy [this USB UART adapter](www.amazon.d
 | green (RX)  | pin 8 (TX)  |
 | white (TX)  | pin 10 (RX) |
 | red (+5V)   | (leave out) |
+
+Now plug the USB end into you computer. On Windows you can use Putty. Under "Sessions", select "Serial" (very right), look up the COM port in the device manager, set the Speed to 115200 and press "Open".</br>
+On Linux (my example is for Ubuntu/Debian/Mint) you can use call up (cu). This provides a connection to a remote system. In our case we want the connection through the USB-Serial converter, which Linux provides as /dev/ttyUSB*. To exit cu, must have a new line and type "~." (Enter, Shift+Enter, "~."+Enter).
+```
+$ sudo apt-get install cu
+$ cu -l /dev/USB0 -s 115200
+```
