@@ -37,8 +37,29 @@ If you live in Germany like me, you can buy [this USB UART adapter](www.amazon.d
 | red (+5V)   | (leave out) |
 
 Now plug the USB end into you computer. On Windows you can use Putty. Under "Sessions", select "Serial" (very right), look up the COM port in the device manager, set the Speed to 115200 and press "Open".</br>
-On Linux (my example is for Ubuntu/Debian/Mint) you can use call up (cu). This provides a connection to a remote system. In our case we want the connection through the USB-Serial converter, which Linux provides as /dev/ttyUSB*. To exit cu, must have a new line and type "~." (Enter, Shift+Enter, "~."+Enter).
+On Linux (my example is for Ubuntu/Debian/Mint) you can use screen.
 ```
-$ sudo apt-get install cu
-$ cu -l /dev/USB0 -s 115200
+$ sudo apt-get install screen
+$ screen /dev/ttyUSB0 115200
 ```
+Now you should see the Pi booting and in the end the login promt. Login with pi:raspberry.</br>
+When logged in:
+```
+$ sudo raspi-config
+```
+Now configure the system as you please. I recommend expanding the file system, chanign the user password, changing the time zone, enabling the camera and changing the host name.</br>
+The next thing you might want to to is connect to the local netwrok. You can use an ethernet cable that you plug into your switch, but this robot is supposed to be mobile in the end there we can already now use the wifi USB dongle.
+```
+$ sudo iwlist wlan0 scan | grep ESSID
+...
+                    ESSID:"YourAccessPoint"
+...
+$ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+network={
+    ssid="YourAccessPoint"
+    psk="YourPassPhrase"
+}
+$ sudo ifdown wlan0; sudo ifup wlan0
+$ ping 8.8.8.8 -c 10
+```
+The ping at the end will only work, if your network has a gateway to the internet and a dhcp server (which is likely).
