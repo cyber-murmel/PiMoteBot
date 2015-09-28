@@ -33,7 +33,7 @@ sdc                 8:32   1   3.7G  0 disk
 ├─sdc1              8:33   1    56M  0 part #
 └─sdc2              8:34   1   3.7G  0 part # the SD card
 sr0                11:0    1  1024M  0 rom 
-$ dd if=raspbian.zip | p -b | sudo dd of=/dev/sdc bs=128M ; sync
+$ dd if=2015-05-05-raspbian-wheezy.img | pv -b | sudo dd of=/dev/sdc bs=128M ; sync
 ```
 This is the SD card ready. Plug it in, but don't power up yet. For the first time setup you can either connect a display and keyboard, wire connected to the local network, try to get the Ip and connect via SSH or connect to it via UART/Serial.
 
