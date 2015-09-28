@@ -2,6 +2,18 @@
 
 The goal of this porject is to get a Raspbery Pi up and running with a webserver over which you can controle the motors and watch a live camera stream.
 
+##What you need for this project
+
+* Raspberry Pi
+* SD card >=4GB
+* Raspberry Pi camera
+* USB WiFI dongle
+* battery (I use a [three cell 2200mAh LiPo](http://hobbyking.com/hobbyking/store/__8932__Turnigy_2200mAh_3S_20C_Lipo_Pack.html)
+* motors (I use [LEGO Functions Power Functions XL-Motor](http://www.amazon.com/LEGO-Functions-Power-XL-Motor-8882/dp/B003S832A6/)
+* a motor driver board (I use a L293D and a NE555)
+* some wires
+* a case (because of the LEGO motors i build a LEGO case)
+
 ## Setup
 
 To keep it easy I use  the [Raspbian Server Edition](http://elinux.org/RPi_Distributions#Raspbian_Server_Edition), which is a lightweight version of Raspbian, but in case this link isn't working any more normal raspbian is also fine.</br>
